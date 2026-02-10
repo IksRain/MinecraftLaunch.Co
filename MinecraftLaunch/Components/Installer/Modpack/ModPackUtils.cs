@@ -28,6 +28,7 @@ internal static class ModPackUtils
                 RemoveOverridesPrefix(item.FullName, overridesPrefix));
             if (item.FullName.EndsWith(ZipPathSeparator))
             {
+                if(File.Exists(targetPath))File.Delete(targetPath);
                 Directory.CreateDirectory(targetPath);
                 continue;
             }
